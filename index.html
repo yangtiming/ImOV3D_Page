@@ -164,15 +164,22 @@
 <!-- End paper abstract -->
 
 
-<!-- Overview image section -->
+<!-- Overview image section -->  
 <section class="hero is-small">
+  <h2 class="title is-3">Overview of ImOV3D</h2>
   <div class="hero-body">
     <div class="container">
       <div class="overview-image">
         <!-- Your overview image here -->
-        <img src="static/images/carousel1.jpg" alt="Overview image"/>
+        <img src="static/images/overview_ImOV3D.png" alt="Overview image"/>
         <h2 class="subtitle has-text-centered">
-          Overview of the system.
+          Our model takes 2D images as input and puts them into the Pseudo
+3D Annotation Generator to produce pseudo annotations. These 2D images are also fed into the
+Point Cloud Lifting Module to generate pseudo point clouds. Subsequently, using the Point Cloud
+Renderer, these pseudo point clouds are rendered into pseudo images, which then get processed by a
+2D open vocabulary detector to detect 2D proposals and transfer the 2D semantic information to 3D
+space. Armed with pseudo point clouds, annotations, and pseudo images data, we proceed to train a
+multimodal 3D detector.
         </h2>
       </div>
     </div>
