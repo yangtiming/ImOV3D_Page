@@ -170,35 +170,38 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/t1.png" alt="Overview image" style="width: 60%; margin: 0 auto; display: block;"/>
-        <h2 class="subtitle has-text-centered">
-          <b>Left</b>: Traditional methods require paired RGB-D data for training and use single-modality
-point clouds input during inference. <b>Right</b>: ImOV3D involves using a vast amount of 2D images
-to generate pseudo point clouds during the training phase, which are then rendered back into
-images. In the inference phase, with only point clouds input, we still construct a pseudo multimodal
-representation to enhance detection performance.
-        </h2>
-      </div>
-        
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/overview_ImOV3D.png" alt="Overview image" style="width: 60%; margin: 0 auto; display: block;"/>
-        <h2 class="subtitle has-text-centered">
-          Our model takes 2D images as input and puts them into the Pseudo
-          3D Annotation Generator to produce pseudo annotations. These 2D images are also fed into the
-          Point Cloud Lifting Module to generate pseudo point clouds. Subsequently, using the Point Cloud
-          Renderer, these pseudo point clouds are rendered into pseudo images, which then get processed by a
-          2D open vocabulary detector to detect 2D proposals and transfer the 2D semantic information to 3D
-          space. Armed with pseudo point clouds, annotations, and pseudo images data, we proceed to train a
-          multimodal 3D detector.
-        </h2>
-      </div>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/t1.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
+          <div style="max-width: 70%; margin: 0 auto;">
+            <h2 class="subtitle has-text-centered">
+              <b>Left</b>: Traditional methods require paired RGB-D data for training and use single-modality
+              point clouds input during inference. <b>Right</b>: ImOV3D involves using a vast amount of 2D images
+              to generate pseudo point clouds during the training phase, which are then rendered back into
+              images. In the inference phase, with only point clouds input, we still construct a pseudo multimodal
+              representation to enhance detection performance.
+            </h2>
+          </div>
+        </div>
 
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/overview_ImOV3D.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
+          <div style="max-width: 70%; margin: 0 auto;">
+            <h2 class="subtitle has-text-centered">
+              Our model takes 2D images as input and puts them into the Pseudo
+              3D Annotation Generator to produce pseudo annotations. These 2D images are also fed into the
+              Point Cloud Lifting Module to generate pseudo point clouds. Subsequently, using the Point Cloud
+              Renderer, these pseudo point clouds are rendered into pseudo images, which then get processed by a
+              2D open vocabulary detector to detect 2D proposals and transfer the 2D semantic information to 3D
+              space. Armed with pseudo point clouds, annotations, and pseudo images data, we proceed to train a
+              multimodal 3D detector.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </section>
 <!-- End image carousel -->
 
