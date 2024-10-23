@@ -388,7 +388,142 @@
 </section>
 
 
- 
+
+
+
+
+
+
+
+
+
+
+
+<section class="section hero is-light">
+  <h2 class="title is-3 has-text-centered">Performance Comparison</h2>
+
+<style>
+  table {
+    width: 80%; /* 表格宽度 */
+    margin: auto;
+    border-collapse: collapse;
+  }
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px;
+    font-size: 12px;
+  }
+  th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid black; /* 三线表上横线 */
+  }
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  tr {
+    border-bottom: 1px solid black; /* 三线表中间横线 */
+  }
+  table tbody tr:last-child {
+    border-bottom: 2px solid black; /* 三线表下横线 */
+  }
+  .increase {
+    color: red;
+  }
+</style>
+
+<table>
+  <caption>Results from the <b>Pretraining stage</b> comparison experiments on SUNRGBD and ScanNet, ImOV3D only require point clouds input.</caption>
+  <thead>
+    <tr>
+      <th>Stage</th>
+      <th>Data Type</th>
+      <th>Method</th>
+      <th>Input</th>
+      <th>Training Strategy</th>
+      <th>SUNRGBD mAP@0.25</th>
+      <th>ScanNet mAP@0.25</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="4">Pre-training</td>
+      <td rowspan="4">Pseudo Data</td>
+      <td>OV-VoteNet</td>
+      <td>Point Cloud</td>
+      <td>One-Stage</td>
+      <td>5.18</td>
+      <td>5.86</td>
+    </tr>
+    <tr>
+      <td>OV-3DETR</td>
+      <td>Point Cloud</td>
+      <td>One-Stage</td>
+      <td>5.24</td>
+      <td>5.30</td>
+    </tr>
+    <tr>
+      <td>OV-3DET</td>
+      <td>Point Cloud + Image</td>
+      <td>Two-Stage</td>
+      <td>5.47</td>
+      <td>5.69</td>
+    </tr>
+    <tr>
+      <td>Ours</td>
+      <td>Point Cloud</td>
+      <td>One-Stage</td>
+      <td><b>12.61</b> <span class="increase">↑ 7.14</span></td>
+      <td><b>12.64</b> <span class="increase">↑ 6.78</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<br><br>
+<table>
+  <caption>Results from the <b>Adaptation stage</b> comparison experiments on SUNRGBD and ScanNet</caption>
+  <thead>
+    <tr>
+      <th>Stage</th>
+      <th>Method</th>
+      <th>Input</th>
+      <th>Training Strategy</th>
+      <th>SUNRGBD mAP@0.25</th>
+      <th>ScanNet mAP@0.25</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">Adaptation</td>
+      <td>OV-3DET</td>
+      <td>Point Cloud + Image</td>
+      <td>Two-Stage</td>
+      <td>20.46</td>
+      <td>18.02</td>
+    </tr>
+    <tr>
+      <td>CoDA</td>
+      <td>Point Cloud</td>
+      <td>One-Stage</td>
+      <td>—</td>
+      <td>19.32</td>
+    </tr>
+    <tr>
+      <td>Ours</td>
+      <td>Point Cloud</td>
+      <td>One-Stage</td>
+      <td><b>22.53</b> <span class="increase">↑ 2.07</span></td>
+      <td><b>21.45</b> <span class="increase">↑ 2.13</span></td>
+    </tr>
+  </tbody>
+</table>
+
+</section>
+
+
+
+  
 <!-- Overview image section -->  
 <section class="hero is-small">
   <div class="hero-body">
@@ -433,8 +568,8 @@
 
   
 <!-- Image carousel -->
-<section class="section hero is-light">
-  <h2 class="title is-3 has-text-centered">The comparison of detection result visualizations.</h2>
+<section class="hero is-small">
+  <h2 class="title is-3 has-text-centered">The comparison of detection result visualizations</h2>
     <div style="max-width: 70%; margin: 0 auto;">
   <h2 class="subtitle has-text-centered" style="font-size: 18px;"> <!-- 调整字体大小 -->
   During the pretraining stage, the visual comparison tested on the SUNRGBD\ScanNet dataset includes four columns: the first column shows the ground truth images, the second column displays the ground truth point clouds, the third column presents the detection results by OV-3DET, and the fourth column reveals the detection outcomes by ImOV3D.
