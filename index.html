@@ -271,7 +271,7 @@
 
 <style>
   table {
-    width: 60%; /* 表格宽度 */
+    width: 80%; /* 表格宽度 */
     margin: auto;
     border-collapse: collapse;
   }
@@ -284,10 +284,6 @@
   th {
     background-color: #f2f2f2;
     border-bottom: 2px solid black; /* 三线表上横线 */
-  }
-  td {
-    text-align: center;
-    vertical-align: middle;
   }
   tr {
     border-bottom: 1px solid black; /* 三线表中间横线 */
@@ -307,45 +303,45 @@
   <caption>Results from the <b>Pretraining stage</b> comparison experiments on SUNRGBD and ScanNet, ImOV3D only require point clouds input.</caption>
   <thead>
     <tr>
-      <th>Stage</th>
-      <th>Data Type</th>
-      <th>Method</th>
-      <th>Input</th>
-      <th>Training Strategy</th>
-      <th>SUNRGBD mAP@0.25</th>
-      <th>ScanNet mAP@0.25</th>
+      <th style="text-align:center; vertical-align:middle;">Stage</th>
+      <th style="text-align:center; vertical-align:middle;">Data Type</th>
+      <th style="text-align:center; vertical-align:middle;">Method</th>
+      <th style="text-align:center; vertical-align:middle;">Input</th>
+      <th style="text-align:center; vertical-align:middle;">Training Strategy</th>
+      <th style="text-align:center; vertical-align:middle;">SUNRGBD mAP@0.25</th>
+      <th style="text-align:center; vertical-align:middle;">ScanNet mAP@0.25</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td rowspan="4">Pre-training</td>
-      <td rowspan="4">Pseudo Data</td>
-      <td>OV-VoteNet</td>
-      <td>Point Cloud</td>
-      <td>One-Stage</td>
-      <td>5.18</td>
-      <td>5.86</td>
+      <td style="text-align:center; vertical-align:middle;" rowspan="4">Pre-training</td>
+      <td style="text-align:center; vertical-align:middle;" rowspan="4">Pseudo Data</td>
+      <td style="text-align:center; vertical-align:middle;">OV-VoteNet</td>
+      <td style="text-align:center; vertical-align:middle;">Point Cloud</td>
+      <td style="text-align:center; vertical-align:middle;">One-Stage</td>
+      <td style="text-align:center; vertical-align:middle;">5.18</td>
+      <td style="text-align:center; vertical-align:middle;">5.86</td>
     </tr>
     <tr>
-      <td>OV-3DETR</td>
-      <td>Point Cloud</td>
-      <td>One-Stage</td>
-      <td>5.24</td>
-      <td>5.30</td>
+      <td style="text-align:center; vertical-align:middle;">OV-3DETR</td>
+      <td style="text-align:center; vertical-align:middle;">Point Cloud</td>
+      <td style="text-align:center; vertical-align:middle;">One-Stage</td>
+      <td style="text-align:center; vertical-align:middle;">5.24</td>
+      <td style="text-align:center; vertical-align:middle;">5.30</td>
     </tr>
     <tr>
-      <td>OV-3DET</td>
-      <td>Point Cloud + Image</td>
-      <td>Two-Stage</td>
-      <td>5.47</td>
-      <td>5.69</td>
+      <td style="text-align:center; vertical-align:middle;">OV-3DET</td>
+      <td style="text-align:center; vertical-align:middle;">Point Cloud + Image</td>
+      <td style="text-align:center; vertical-align:middle;">Two-Stage</td>
+      <td style="text-align:center; vertical-align:middle;">5.47</td>
+      <td style="text-align:center; vertical-align:middle;">5.69</td>
     </tr>
     <tr class="highlight">
-      <td>Ours</td>
-      <td>Point Cloud</td>
-      <td>One-Stage</td>
-      <td><b>12.61</b> <span class="increase">↑ 7.14</span></td>
-      <td><b>12.64</b> <span class="increase">↑ 6.78</span></td>
+      <td style="text-align:center; vertical-align:middle;">Ours</td>
+      <td style="text-align:center; vertical-align:middle;">Point Cloud</td>
+      <td style="text-align:center; vertical-align:middle;">One-Stage</td>
+      <td style="text-align:center; vertical-align:middle;"><b>12.61</b> <span class="increase">↑ 7.14</span></td>
+      <td style="text-align:center; vertical-align:middle;"><b>12.64</b> <span class="increase">↑ 6.78</span></td>
     </tr>
   </tbody>
 </table>
@@ -355,36 +351,36 @@
   <caption>Results from the <b>Adaptation stage</b> comparison experiments on SUNRGBD and ScanNet</caption>
   <thead>
     <tr>
-      <th>Stage</th>
-      <th>Method</th>
-      <th>Input</th>
-      <th>Training Strategy</th>
-      <th>SUNRGBD mAP@0.25</th>
-      <th>ScanNet mAP@0.25</th>
+      <th style="text-align:center; vertical-align:middle;">Stage</th>
+      <th style="text-align:center; vertical-align:middle;">Method</th>
+      <th style="text-align:center; vertical-align:middle;">Input</th>
+      <th style="text-align:center; vertical-align:middle;">Training Strategy</th>
+      <th style="text-align:center; vertical-align:middle;">SUNRGBD mAP@0.25</th>
+      <th style="text-align:center; vertical-align:middle;">ScanNet mAP@0.25</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td rowspan="3">Adaptation</td>
-      <td>OV-3DET</td>
-      <td>Point Cloud + Image</td>
-      <td>Two-Stage</td>
-      <td>20.46</td>
-      <td>18.02</td>
+      <td style="text-align:center; vertical-align:middle;" rowspan="3">Adaptation</td>
+      <td style="text-align:center; vertical-align:middle;">OV-3DET</td>
+      <td style="text-align:center; vertical-align:middle;">Point Cloud + Image</td>
+      <td style="text-align:center; vertical-align:middle;">Two-Stage</td>
+      <td style="text-align:center; vertical-align:middle;">20.46</td>
+      <td style="text-align:center; vertical-align:middle;">18.02</td>
     </tr>
     <tr>
-      <td>CoDA</td>
-      <td>Point Cloud</td>
-      <td>One-Stage</td>
-      <td>—</td>
-      <td>19.32</td>
+      <td style="text-align:center; vertical-align:middle;">CoDA</td>
+      <td style="text-align:center; vertical-align:middle;">Point Cloud</td>
+      <td style="text-align:center; vertical-align:middle;">One-Stage</td>
+      <td style="text-align:center; vertical-align:middle;">—</td>
+      <td style="text-align:center; vertical-align:middle;">19.32</td>
     </tr>
-    <tr class="highlight"> <!-- 添加 highlight 类以高亮最后一行 -->
-      <td>Ours</td>
-      <td>Point Cloud</td>
-      <td>One-Stage</td>
-      <td><b>22.53</b> <span class="increase">↑ 2.07</span></td>
-      <td><b>21.45</b> <span class="increase">↑ 2.13</span></td>
+    <tr class="highlight">
+      <td style="text-align:center; vertical-align:middle;">Ours</td>
+      <td style="text-align:center; vertical-align:middle;">Point Cloud</td>
+      <td style="text-align:center; vertical-align:middle;">One-Stage</td>
+      <td style="text-align:center; vertical-align:middle;"><b>22.53</b> <span class="increase"><b>↑ 2.07</b></span></td>
+      <td style="text-align:center; vertical-align:middle;"><b>21.45</b> <span class="increase"><b>↑ 2.13</b></span></td>
     </tr>
   </tbody>
 </table>
