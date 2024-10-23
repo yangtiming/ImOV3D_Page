@@ -434,7 +434,34 @@
   }
 </style>
 
-<table border="1" cellspacing="0" cellpadding="5" align="center">
+<style>
+  table {
+    width: 80%; /* 表格宽度 */
+    border-collapse: collapse;
+    margin: auto;
+  }
+  th, td {
+    text-align: center; /* 水平居中 */
+    vertical-align: middle; /* 垂直居中 */
+    padding: 8px;
+    font-size: 12px; /* 字体大小 */
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  td {
+    text-align: center; /* 强制每个单元格水平居中 */
+    vertical-align: middle; /* 强制每个单元格垂直居中 */
+  }
+  tr:nth-child(4) {
+    background-color: #d5f5d3;
+  }
+  .increase {
+    color: red;
+  }
+</style>
+
+<table border="1" cellspacing="0" cellpadding="5">
   <thead>
     <tr>
       <th>Stage</th>
@@ -470,7 +497,7 @@
       <td>5.47</td>
       <td>5.69</td>
     </tr>
-    <tr>
+    <tr style="background-color: #d5f5d3;">
       <td>Ours</td>
       <td>Point Cloud</td>
       <td>One-Stage</td>
@@ -479,6 +506,7 @@
     </tr>
   </tbody>
 </table>
+
 
   
 <!-- Paper poster -->
