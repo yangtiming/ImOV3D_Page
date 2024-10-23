@@ -338,6 +338,48 @@
     </tr>
   </tbody>
 </table>
+
+
+<table border="1" cellspacing="0" cellpadding="5">
+  <caption>Results from the <b>Adaptation stage</b> comparison experiments on SUNRGBD and ScanNet</caption>
+  <thead>
+    <tr>
+      <th style="text-align:center; vertical-align:middle;">Stage</th>
+      <th style="text-align:center; vertical-align:middle;">Method</th>
+      <th style="text-align:center; vertical-align:middle;">Input</th>
+      <th style="text-align:center; vertical-align:middle;">Training Strategy</th>
+      <th style="text-align:center; vertical-align:middle;">SUNRGBD mAP@0.25</th>
+      <th style="text-align:center; vertical-align:middle;">ScanNet mAP@0.25</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3" style="text-align:center; vertical-align:middle;">Adaptation</td>
+      <td style="text-align:center; vertical-align:middle;">OV-3DET <sup>[26]</sup></td>
+      <td style="text-align:center; vertical-align:middle;">Point Cloud + Image</td>
+      <td style="text-align:center; vertical-align:middle;">Two-Stage</td>
+      <td style="text-align:center; vertical-align:middle;">20.46</td>
+      <td style="text-align:center; vertical-align:middle;">18.02</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; vertical-align:middle;">CoDA <sup>[5]</sup></td>
+      <td style="text-align:center; vertical-align:middle;">Point Cloud</td>
+      <td style="text-align:center; vertical-align:middle;">One-Stage</td>
+      <td style="text-align:center; vertical-align:middle;">—</td>
+      <td style="text-align:center; vertical-align:middle;">19.32</td>
+    </tr>
+    <tr style="background-color: #d5f5d3;">
+      <td style="text-align:center; vertical-align:middle;">Ours</td>
+      <td style="text-align:center; vertical-align:middle;">Point Cloud</td>
+      <td style="text-align:center; vertical-align:middle;">One-Stage</td>
+      <td style="text-align:center; vertical-align:middle;"><b>22.53</b> <span class="increase">↑ 2.07</span></td>
+      <td style="text-align:center; vertical-align:middle;"><b>21.45</b> <span class="increase">↑ 2.13</span></td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
 </section>
   
 <!-- Image carousel -->
