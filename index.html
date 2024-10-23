@@ -336,6 +336,55 @@
 </section>
 <!-- End video carousel -->
 
+
+
+<table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Stage</th>
+      <th>Data Type</th>
+      <th>Method</th>
+      <th>Input</th>
+      <th>Training Strategy</th>
+      <th>SUNRGBD mAP@0.25</th>
+      <th>ScanNet mAP@0.25</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="4">Pre-training</td>
+      <td rowspan="4">Pseudo Data</td>
+      <td>OV-VoteNet <sup>[34]</sup></td>
+      <td>Point Cloud</td>
+      <td>One-Stage</td>
+      <td>5.18</td>
+      <td>5.86</td>
+    </tr>
+    <tr>
+      <td>OV-3DETR <sup>[30]</sup></td>
+      <td>Point Cloud</td>
+      <td>One-Stage</td>
+      <td>5.24</td>
+      <td>5.30</td>
+    </tr>
+    <tr>
+      <td>OV-3DET <sup>[26]</sup></td>
+      <td>Point Cloud + Image</td>
+      <td>Two-Stage</td>
+      <td>5.47</td>
+      <td>5.69</td>
+    </tr>
+    <tr style="background-color: #d5f5d3;">
+      <td>Ours</td>
+      <td>Point Cloud</td>
+      <td>One-Stage</td>
+      <td><b>12.61</b> <span style="color: red;">↑ 7.14</span></td>
+      <td><b>12.64</b> <span style="color: red;">↑ 6.78</span></td>
+    </tr>
+  </tbody>
+</table>
+
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
