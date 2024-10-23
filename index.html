@@ -350,6 +350,8 @@
   }
   th {
     background-color: #f2f2f2;
+    text-align: center; /* 强制标题行水平居中 */
+    vertical-align: middle; /* 强制标题行垂直居中 */
   }
   td {
     text-align: center; /* 强制每个单元格水平居中 */
@@ -366,13 +368,13 @@
 <table border="1" cellspacing="0" cellpadding="5">
   <thead>
     <tr>
-      <th>Stage</th>
-      <th>Data Type</th>
-      <th>Method</th>
-      <th>Input</th>
-      <th>Training Strategy</th>
-      <th>SUNRGBD mAP@0.25</th>
-      <th>ScanNet mAP@0.25</th>
+      <th style="text-align:center; vertical-align:middle;">Stage</th>
+      <th style="text-align:center; vertical-align:middle;">Data Type</th>
+      <th style="text-align:center; vertical-align:middle;">Method</th>
+      <th style="text-align:center; vertical-align:middle;">Input</th>
+      <th style="text-align:center; vertical-align:middle;">Training Strategy</th>
+      <th style="text-align:center; vertical-align:middle;">SUNRGBD mAP@0.25</th>
+      <th style="text-align:center; vertical-align:middle;">ScanNet mAP@0.25</th>
     </tr>
   </thead>
   <tbody>
