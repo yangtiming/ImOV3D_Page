@@ -23,7 +23,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>ImOV3D</title>
+  <title>ImOV3D_NeurIPS2024</title>
+  <link rel="icon" type="image/x-icon" href="static/images/ImOV3D_Icon.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -41,6 +42,93 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <style>
+    .im-color { color: #e23e57; }
+    .o-color { color: #f07b3f; }
+    .v-color { color: #00b8a9; }
+    .d-color { color: #3490de; }
+    .three-color { color: #3490de; } /* 假设3D中的3和D都是蓝色 */
+</style>
+<style>
+  .eql-cntrb {
+      display: inline; /* 或者使用 display: inline-block; */
+      vertical-align: top; /* 确保上标对齐 */
+      margin-right: 10px; /* 给两个元素之间留点空间 */
+  }
+  small {
+      display: inline; /* 确保<small>标签不会换行 */
+  }
+</style>
+
+
+<style>
+  .link-block a {
+      text-decoration: none;
+      border: none;
+      background: none;
+      font-weight: bold;
+      color: black;
+      display: inline-block; /* 确保链接是内联块级元素 */
+  }
+
+  .link-block .icon {
+      font-size: 24px; /* 设置图标大小 */
+      margin-right: 8px; /* 图标和文本之间的间距 */
+  }
+
+  .link-block .icon i {
+      font-size: inherit; /* 继承父元素的字体大小 */
+  }
+
+  .link-block span {
+      font-size: 16px; /* 设置文本大小 */
+      vertical-align: middle; /* 垂直居中文本和图标 */
+  }
+</style>
+
+<style>
+  .content pre {
+    background-color: #f5f5f5; /* 背景颜色 */
+    border: 1px solid #ccc; /* 边框 */
+    padding: 10px; /* 内边距 */
+    white-space: pre-wrap; /* 保持空格和换行，同时允许文本自动换行 */
+  }
+  .content code {
+    font-family: monospace; /* 等宽字体 */
+    font-size: 0.9em; /* 字体大小 */
+  }
+</style>
+
+<style>
+  .link-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* 按钮之间的间距 */
+    margin-top: 20px; /* 与上方内容的间距 */
+  }
+  .link-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333; /* 背景色 */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px; /* 圆角 */
+    text-decoration: none;
+    font-size: 16px; /* 文字大小 */
+    transition: background-color 0.3s ease; /* 悬停过渡效果 */
+  }
+  .link-block:hover {
+    background-color: #797777; /* 悬停时变亮 */
+  }
+  .link-block .icon {
+    margin-right: 8px; /* 图标与文字之间的间距 */
+  }
+  .link-block .icon i {
+    font-size: 18px; /* 图标大小 */
+  }
+</style>
+
 </head>
 <body>
 
@@ -50,75 +138,70 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">ImOV3D: Learning <u>O</u>pen-<u>V</u>ocabulary Point Clouds <u>3D</u> Object Detection from Only 2D <u>Im</u>ages
-</h1>
-            <div class="is-size-5 publication-authors">
+            <!-- <h1 class="title is-1 publication-title">ImOV3D: Learning <u>O</u>pen-<u>V</u>ocabulary Point Clouds <u>3D</u> Object Detection from Only 2D <u>Im</u>ages
+</h1> -->
+            <h1 class="title is-1 publication-title" style="font-size: 40px;">
+              <span class="im-color">Im</span><span class="o-color">O</span><span class="v-color">V</span><span class="three-color">3D</span>: Learning 
+              <span class="o-color">O</span>pen-<span class="v-color">V</span>ocabulary Point Clouds 
+              <span class="three-color">3D</span> Object Detection from Only 2D 
+              <span class="im-color">Im</span>ages
+            </h1>
+            <div class="is-size-4 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
                 <a href="https://yangtiming.github.io" target="_blank">Timing Yang</a><sup>1,2*</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Yuanliang Ju</a><sup>1,2*</sup>,</span>
+                  <a href="https://x.com/averyjuuu0213" target="_blank">Yuanliang Ju</a><sup>1,2*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Li Yi</a><sup>2,3,1 &#8224;</sup>
+                    <a href="https://ericyi.github.io/" target="_blank">Li Yi</a><sup>2,3,1 &#8224;</sup>
                   </span>
                   </div>
 
-                  <div class="is-size-6 publication-authors">
+                  <div class="is-size-5 publication-authors">
                     <span class="author-block"><sup>1</sup> Shanghai Qi Zhi Institute, <sup>2</sup> IIIS, Tsinghua University, <sup>3</sup> Shanghai AI Lab
-<br><b>NeurIPS 2024</b></span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span>
-                    <span class="eql-cntrb"><small><br><sup>&#8224;</sup>Corresponding Author</small></span>
+                    <br><b >🇨🇦 NeurIPS 2024 🔥</b></span><br>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span>
+                    <span class="eql-cntrb"><small><br><sup>&#8224;</sup>Corresponding Author</small></span> -->
+                    <span class="eql-cntrb">
+                      <small>
+                          <sup>*</sup>Equal Contribution
+                      </small>
+                  </span>
+                  <span class="eql-cntrb">
+                      <small>
+                          <sup>&#8224;</sup>Corresponding Author
+                      </small>
+                  </span>
                     
                   </div>
+                  <div class="link-container">
+                    <a href="https://arxiv.org/pdf/2410.24001v1" target="_blank" class="link-block">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  
+                    <a href="https://drive.google.com/file/d/1azNJz1y2zi_eZrvCrY5zkJ9lDgjPA7O7/view?usp=sharing" target="_blank" class="link-block">
+                      <span class="icon">
+                        <i class="fas fa-file-alt"></i>
+                      </span>
+                      <span>Poster</span>
+                    </a>
+                  
+                    <a href="https://github.com/yangtiming/ImOV3D" target="_blank" class="link-block">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-
-                <!-- ArXiv abstract Link without background and bold icon/text -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2410.24001v1" target="_blank"
-                  style="text-decoration: none; border: none; background: none; font-weight: bold; color: black;">
-                    <span class="icon" style="color: black;">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span style="font-weight: bold; color: black;">arXiv</span>
-                  </a>
-                </span>
-
-
-
-              <!-- Github link without background and bold icon/text -->
-              <span class="link-block">
-                <a href="https://github.com/yangtiming/ImOV3D" target="_blank"
-                style="text-decoration: none; border: none; background: none; font-weight: bold; color: black;">
-                  <span class="icon" style="color: black;">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <span style="font-weight: bold; color: black;">Code</span>
-                </a>
-              </span>
-
-                                      
-
-            <!-- Video link without background and bold icon/text -->
-            <span class="link-block">
-              <a href="static/videos/video_link.mp4" target="_blank"
-              style="text-decoration: none; border: none; background: none; font-weight: bold; color: black;">
-                <span class="icon" style="color: black;">
-                  <i class="fas fa-video"></i>
-                </span>
-                <span style="font-weight: bold; color: black;">Video</span>
-              </a>
-            </span>
-
-
-
-    
-
-
-
-                      
-            </div>
+                    <a href="https://github.com/yangtiming/ImOV3D" target="_blank" class="link-block">
+                      <span class="icon">
+                        <i class="fab fa-twitter"></i>
+                      </span>
+                      <span>X</span>
+                    </a>
           </div>
         </div>
       </div>
@@ -127,35 +210,19 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Open-vocabulary 3D object detection (OV-3Det) aims to generalize beyond the limited number of base categories labeled during the training phase. The biggest bottleneck is the scarcity of annotated 3D data, whereas 2D image datasets are abundant and richly annotated. Consequently, it is intuitive to leverage the wealth of annotations in 2D images to alleviate the inherent data scarcity in OV-3Det. In this paper, we push the task setup to its limits by exploring the potential of using solely 2D images to learn OV-3Det. The major challenges for this setup is the modality gap between training image and testing point cloud, which prevents effective integration of 2D knowledge into OV-3Det. To address this challenge, we propose a novel framework ImOV3D to leverage pseudo multimodal representation containing both images and point clouds (PC) to close the modality gap. The key of ImOV3D lies in flexible modality conversion where 2D images can be lifted into 3D using monocular depth estimation and can also be derived from 3D scenes through rendering. This allows unifying both training images and testing point cloud into a common image-PC representation, encompassing a wealth of 2D semantic information and also incorporating the depth and structural characteristics of 3D spatial data. We carefully conduct such conversion to minimize the domain gap between training and test cases. Extensive experiments on two benchmark datasets, SUNRGBD and ScanNet, show that ImOV3D significantly outperforms existing methods, even in the absence of ground truth 3D training data. With the inclusion of a minimal amount of real 3D data for fine-tuning, the performance also significantly surpasses previous state-of-the-art.
-          </p>
-        </div>
-      </div>
+<section class="section" id="Abstract" style="margin-top: 5px;">
+  <div class="container is-max-desktop content">
+    <h2 class="title has-text-centered">Abstract</h2>
+    <div class="content has-text-justified is-centered" style="padding: 20px;">
+      <p>
+        Open-vocabulary 3D object detection (OV-3Det) aims to generalize beyond the limited number of base categories labeled during the training phase. The biggest bottleneck is the scarcity of annotated 3D data, whereas 2D image datasets are abundant and richly annotated. Consequently, it is intuitive to leverage the wealth of annotations in 2D images to alleviate the inherent data scarcity in OV-3Det. In this paper, we push the task setup to its limits by exploring the potential of using solely 2D images to learn OV-3Det. The major challenges for this setup is the modality gap between training image and testing point cloud, which prevents effective integration of 2D knowledge into OV-3Det.
+      </p>
+      <!-- 在这里插入图片 -->
+      <img src="static/images/t3.png" alt="Description of the image" style="display: block; margin-left: auto; margin-right: auto; width: 100%;"/>
+      <p>
+        To address this challenge, we propose a novel framework <b><span class="im-color">Im</span><span class="o-color">O</span><span class="v-color">V</span><span class="three-color">3D</span></b> to leverage pseudo multimodal representation containing both images and point clouds (PC) to close the modality gap. The key of ImOV3D lies in flexible modality conversion where 2D images can be lifted into 3D using monocular depth estimation and can also be derived from 3D scenes through rendering. This allows unifying both training images and testing point cloud into a common image-PC representation, encompassing a wealth of 2D semantic information and also incorporating the depth and structural characteristics of 3D spatial data. We carefully conduct such conversion to minimize the domain gap between training and test cases. Extensive experiments on two benchmark datasets, SUNRGBD and ScanNet, show that ImOV3D significantly outperforms existing methods, even in the absence of ground truth 3D training data. With the inclusion of a minimal amount of real 3D data for fine-tuning, the performance also significantly surpasses previous state-of-the-art.
+      </p>
     </div>
   </div>
 </section>
@@ -431,11 +498,11 @@
 
   
 <!-- Image carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <h2 class="title is-3 has-text-centered">The comparison of detection result visualizations</h2>
     <div style="max-width: 70%; margin: 0 auto;">
   <h2 class="subtitle has-text-centered" style="font-size: 18px;"> <!-- 调整字体大小 -->
-  During the pretraining stage, the visual comparison tested on the SUNRGBD\ScanNet dataset includes four columns: the first column shows the ground truth images, the second column displays the ground truth point clouds, the third column presents the detection results by OV-3DET, and the fourth column reveals the detection outcomes by ImOV3D.
+  <!-- During the pretraining stage, the visual comparison tested on the SUNRGBD\ScanNet dataset includes four columns: the first column shows the ground truth images, the second column displays the ground truth point clouds, the third column presents the detection results by OV-3DET, and the fourth column reveals the detection outcomes by ImOV3D.
   </h2>
 </div>
 
@@ -443,15 +510,15 @@
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/sun_vis_lower_dpi.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
+        Your image here -->
+        <!-- <img src="static/images/sun_vis_lower_dpi.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
         <h2 class="subtitle has-text-centered">
          The visualizations of SUNRGBD
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/scan_vis_lower_dpi.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
+        Your image here -->
+        <!-- <img src="static/images/scan_vis_lower_dpi.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
         <h2 class="subtitle has-text-centered">
           The visualizations of ScanNet
         </h2>
@@ -460,32 +527,75 @@
   </div>
 </div>
 </div>
+</section> -->
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">The comparison of detection result visualizations</h2>
+      <!-- <h2 class="subtitle has-text-centered" style="font-size: 18px;">
+        During the pretraining stage, the visual comparison tested on the SUNRGBD/ScanNet dataset includes four columns: the first column shows the ground truth images, the second column displays the ground truth point clouds, the third column presents the detection results by OV-3DET, and the fourth column reveals the detection outcomes by ImOV3D.
+      </h2> -->
+      
+      <div class="content has-text-centered" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+        <div style="flex: 1; margin: 0 10px; text-align: center;">
+          <img src="static/images/sun_vis_lower_dpi.png" alt="Overview image SUNRGBD" style="width: 100%; height: 350px; object-fit: cover;"/>
+          <h2 class="subtitle has-text-centered" style="font-size: 18px; color: #b83b5e;">
+            The visualizations of SUNRGBD
+          </h2>
+        </div>
+        <div style="flex: 1; margin: 0 10px; text-align: center;">
+          <img src="static/images/scan_vis_lower_dpi.png" alt="Overview image ScanNet" style="width: 100%; height: 350px; object-fit: cover;"/>
+          <h2 class="subtitle has-text-centered" style="font-size: 18px; color: #b83b5e;">
+            The visualizations of ScanNet
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- End image carousel -->
 
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
+<section class="section" id="Poster">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Poster</h2>
+    
+    <!-- 确保iframe居中显示 -->
+    <div class="content has-text-centered">
+      <iframe src="static/pdfs/ImOV3D_Poster.pdf" width="89%" height="625"></iframe>
     </div>
-  </section>
+    
+  </div>
+</section>
 <!--End paper poster -->
 
+<section class="section" id="Connect">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Connect</h2>
+    <div class="content">
+      <p style="color: #b83b5e;">If you have any questions, please feel free to contact us:</p>
+      <ul>
+        <li><strong>Timing Yang:</strong> <a href="mailto:timingya@usc.edu">timingya@usc.edu</a></li>
+        <li><strong>Yuanliang Ju:</strong> <a href="mailto:yuanliang.ju@mail.utoronto.ca">yuanliang.ju@mail.utoronto.ca</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code class="bibtex">@article{yang2024imov3d,
+  title={ImOV3D: Learning Open-Vocabulary Point Clouds 3D Object Detection from Only 2D Images},
+  author={Yang, Timing and Ju, Yuanliang and Yi, Li},
+  journal={NeurIPS 2024},
+  year={2024}
+}</code></pre>
+  </div>
 </section>
 <!--End BibTex citation -->
 
