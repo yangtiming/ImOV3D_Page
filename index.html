@@ -220,85 +220,72 @@
       </p>
       <!-- 在这里插入图片 -->
       <img src="static/images/t3.png" alt="Description of the image" style="display: block; margin-left: auto; margin-right: auto; width: 100%;"/>
+      <!-- <figure>
+        <img src="static/images/t3.png" alt="Description of the image" style="display: block; margin-left: auto; margin-right: auto; width: 100%;">
+        <figcaption>这里是图片的标题</figcaption>
+      </figure> -->
       <p>
         To address this challenge, we propose a novel framework <b><span class="im-color">Im</span><span class="o-color">O</span><span class="v-color">V</span><span class="three-color">3D</span></b> to leverage pseudo multimodal representation containing both images and point clouds (PC) to close the modality gap. The key of ImOV3D lies in flexible modality conversion where 2D images can be lifted into 3D using monocular depth estimation and can also be derived from 3D scenes through rendering. This allows unifying both training images and testing point cloud into a common image-PC representation, encompassing a wealth of 2D semantic information and also incorporating the depth and structural characteristics of 3D spatial data. We carefully conduct such conversion to minimize the domain gap between training and test cases. Extensive experiments on two benchmark datasets, SUNRGBD and ScanNet, show that ImOV3D significantly outperforms existing methods, even in the absence of ground truth 3D training data. With the inclusion of a minimal amount of real 3D data for fine-tuning, the performance also significantly surpasses previous state-of-the-art.
       </p>
     </div>
   </div>
 </section>
-<!-- End paper abstract -->
 
-
-<!-- Image carousel -->
 <section class="hero is-small">
-  <h2 class="title is-3 has-text-centered">Overview of ImOV3D</h2>
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-          <!-- Your image here -->
-          <img src="static/images/overview_ImOV3D.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
-          <div style="max-width: 70%; margin: 0 auto;">
-            <h2 class="subtitle has-text-centered">
-              Our model takes 2D images as input and puts them into the Pseudo
-              3D Annotation Generator to produce pseudo annotations. These 2D images are also fed into the
-              Point Cloud Lifting Module to generate pseudo point clouds. Subsequently, using the Point Cloud
-              Renderer, these pseudo point clouds are rendered into pseudo images, which then get processed by a
-              2D open vocabulary detector to detect 2D proposals and transfer the 2D semantic information to 3D
-              space. Armed with pseudo point clouds, annotations, and pseudo images data, we proceed to train a
-              multimodal 3D detector.
-            </h2>
-          </div>
-        </div>
-
-        <div class="item">
-          <!-- Your image here -->
-          <img src="static/images/t1.png" alt="Overview image" style="width: 80%; margin: 0 auto; display: block;"/>
-          <div style="max-width: 70%; margin: 0 auto;">
-            <h2 class="subtitle has-text-centered">
-              <b>Left</b>: Traditional methods require paired RGB-D data for training and use single-modality
-              point clouds input during inference. <b>Right</b>: ImOV3D involves using a vast amount of 2D images
-              to generate pseudo point clouds during the training phase, which are then rendered back into
-              images. In the inference phase, with only point clouds input, we still construct a pseudo multimodal
-              representation to enhance detection performance.
-            </h2>
-          </div>
-        </div>
-        
+      <h2 class="title is-3 has-text-centered" style="font-size: 1.5rem;">Our Pipeline</h2>
+      <div class="overview-video" style="max-width: 77%; margin: 0 auto; text-align: center;">
+        <!-- Embed YouTube video -->
+        <iframe 
+          src="https://www.youtube.com/embed/R052kov-1l0" 
+          title="YouTube video player" 
+          width="100%" 
+          height="498" 
+          style="border: none; display: block; margin: 0 auto;" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+        <p style="text-align: justify; line-height: 1.6;"> Overview of <b><span class="im-color">Im</span><span class="o-color">O</span><span class="v-color">V</span><span class="three-color">3D</span></b>: Our model takes 2D images as input and puts them into the Pseudo
+          3D Annotation Generator to produce pseudo annotations. These 2D images are also fed into the
+          Point Cloud Lifting Module to generate pseudo point clouds. Subsequently, using the Point Cloud
+          Renderer, these pseudo point clouds are rendered into pseudo images, which then get processed by a
+          2D open vocabulary detector to detect 2D proposals and transfer the 2D semantic information to 3D
+          space. Armed with pseudo point clouds, annotations, and pseudo images data, we proceed to train a
+          multimodal 3D detector.</p>
       </div>
     </div>
   </div>
 </section>
-<!-- End image carousel -->
-  
+
+
 <!-- Overview image section -->  
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">3D Data Revision Module</h2>
+      <h2 class="title is-3 has-text-centered" style="font-size: 1.5rem;">3D Data Revision Module</h2>
       <div class="overview-image">
         <!-- Adjust the image size by setting width -->
-        <img src="static/images/77.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
-        <div style="max-width: 80%; margin: 0 auto;">
-          <h2 class="subtitle has-text-centered">
-            <b>(a)</b> The rotation correction module involves processing an RGB image through a Normal Estimator to generate a normal map. This map then helps extract a horizontal surface mask for identifying horizontal point clouds, from which normal vectors are obtained. These vectors are aligned with the Z-axis to compute the rotation matrix. <b>(b)</b> In the 3D box filtering module, prompts related to object dimensions are first provided to GPT-4 to determine the mean size for each category. This mean size is then used to filter out boxes that do not meet the threshold criteria.
-          </h2>
-        </div>
+        <img src="static/images/77.png" alt="Overview image" style="width: 77%; margin: 0 auto; display: block;"/>
+        <p style="text-align: justify; line-height: 1.6; max-width: 77%; margin: 0 auto;">
+          <b style="color: #b83b5e;">(a)</b> The rotation correction module involves processing an RGB image through a Normal Estimator to generate a normal map. This map then helps extract a horizontal surface mask for identifying horizontal point clouds, from which normal vectors are obtained. These vectors are aligned with the Z-axis to compute the rotation matrix. <b style="color: #b83b5e;">(b)</b> In the 3D box filtering module, prompts related to object dimensions are first provided to GPT-4 to determine the mean size for each category. This mean size is then used to filter out boxes that do not meet the threshold criteria.
+        </p>
       </div>
     </div>
   </div>
 </section>
+
 <!-- End overview image section -->
 
 
 
 
 <!-- Image carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <h2 class="title is-3 has-text-centered">Visualization of Data Generation</h2>
   <div style="max-width: 70%; margin: 0 auto;">
-  <h2 class="subtitle has-text-centered" style="font-size: 18px;"> <!-- 调整字体大小 -->
-    We use the first image from two scenes in the ScanNet dataset as examples to demonstrate the entire process of Data Generation. This explains how 2D data is converted into 3D data, and how 3D data is then transformed back into 2D pseudo data for multimodal training.
+  <h2 class="subtitle has-text-centered" style="font-size: 18px;">调整字体大小 -->
+    <!-- We use the first image from two scenes in the ScanNet dataset as examples to demonstrate the entire process of Data Generation. This explains how 2D data is converted into 3D data, and how 3D data is then transformed back into 2D pseudo data for multimodal training.
   </h2>
 </div>
 
@@ -306,8 +293,8 @@
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
-          <!-- Your image here -->
-          <img src="static/images/demo_0000.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
+          Your image here -->
+          <!-- <img src="static/images/demo_0000.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
           <div style="max-width: 70%; margin: 0 auto;">
             <h2 class="subtitle has-text-centered">
               Scene_0000_01 Visualization
@@ -316,23 +303,23 @@
         </div>
 
         <div class="item">
-          <!-- Your image here -->
-          <img src="static/images/demo_00012.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
+           Your image here -->
+          <!-- <img src="static/images/demo_00012.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
           <div style="max-width: 70%; margin: 0 auto;">
             <h2 class="subtitle has-text-centered">
               Scene_0012_01 Visualization
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            </h2> -->
+          <!-- </div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </section> --> 
 <!-- End image carousel -->
 
 
 <section class="section hero is-light">
-  <h2 class="title is-3 has-text-centered">Performance Comparison</h2>
+  <h2 class="title is-3 has-text-centered" style="font-size: 1.5rem;">Performance Comparison</h2>
 
 <style>
   table {
@@ -365,7 +352,7 @@
 </style>
 
 <table>
-  <caption>Results from the <b>Pretraining stage</b> comparison experiments on SUNRGBD and ScanNet, ImOV3D only require point clouds input.</caption>
+  <caption>Results from the <b style="color: #b83b5e;">Pretraining stage</b> comparison experiments on SUNRGBD and ScanNet, ImOV3D only require point clouds input.</caption>
   <thead>
     <tr>
       <th style="text-align:center; vertical-align:middle;">Stage</th>
@@ -413,7 +400,7 @@
 
 <br><br>
 <table>
-  <caption>Results from the <b>Adaptation stage</b> comparison experiments on SUNRGBD and ScanNet</caption>
+  <caption>Results from the <b style="color: #b83b5e;">Adaptation stage</b> comparison experiments on SUNRGBD and ScanNet</caption>
   <thead>
     <tr>
       <th style="text-align:center; vertical-align:middle;">Stage</th>
@@ -458,19 +445,21 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">Analysis of Depth and Pseudo Images</h2>
+      <h2 class="title is-3 has-text-centered" style="font-size: 1.5rem;">Analysis of Depth and Pseudo Images</h2>
       <div class="overview-image">
         <!-- Adjust the image size by setting width -->
-        <img src="static/images/depth_color.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
-        <div style="max-width: 80%; margin: 0 auto;">
-          <h2 class="subtitle has-text-centered">
-           Generating Pseudo 2D data as an auxiliary part of 3D data is necessary. <b>(a)</b> shows the original 2D RGB images,  <b>(b)</b> shows the 2D depth maps with 2D OVDetector annotations, and  <b>(c)</b> shows the pseudo images with annotations from a 2D OVDetector. It can be observed that the Pseudo Image captures more useful information, which enhances the 3D detection performance.
-          </h2>
-        </div>
+        <img src="static/images/depth_color.png" alt="Overview image" style="width: 77%; margin: 0 auto; display: block;"/>
+        <p style="text-align: justify; line-height: 1.6; max-width: 77%; margin: 20px auto; font-size: 1rem;">
+          Generating Pseudo 2D data as an auxiliary part of 3D data is necessary. <b style="color: #b83b5e;">(a)</b> shows the original 2D RGB images, 
+          <b style="color: #b83b5e;">(b)</b> shows the 2D depth maps with 2D OVDetector annotations, and <b style="color: #b83b5e;">(c)</b> shows the pseudo images with annotations 
+          from a 2D OVDetector. It can be observed that the Pseudo Image captures more useful information, which enhances the 3D 
+          detection performance.
+        </p>
       </div>
     </div>
   </div>
 </section>
+
 <!-- End overview image section -->
 
 
@@ -480,72 +469,36 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">Analysis of Data Volume and Transferability</h2>
+      <h2 class="title is-3 has-text-centered" style="font-size: 1.5rem;">Analysis of Data Volume and Transferability</h2>
       <div class="overview-image">
         <!-- Adjust the image size by setting width -->
-        <img src="static/images/vol_trans_higher_res.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
-        <div style="max-width: 80%; margin: 0 auto;">
-          <h2 class="subtitle has-text-centered">
-           <b>(a)</b> and <b>(b)</b> show the data volume ablation results. Under the adaptation setting, we used varying percentages of data volumes from 100% to 10% for training to determine the specific impact of data scarcity on model performance. It demonstrates that using 2D data for pretraining can help the model maintain high performance even with a small amount of 3D data. <b>(c)</b> illustrates transferability ablation results. 2D to 3D knowledge transfer strategy not only improves the model’s understanding of 3D shapes and structures but also significantly enhances the model’s generalization ability and detection accuracy across different datasets.
-          </h2>
-        </div>
+        <img src="static/images/vol_trans_higher_res.png" alt="Overview image" style="width: 77%; margin: 0 auto; display: block;"/>
+        <p style="text-align: justify; line-height: 1.6; max-width: 77%; margin: 20px auto; font-size: 1rem;">
+          <b style="color: #b83b5e;">(a)</b> and <b style="color: #b83b5e;">(b)</b> show the data volume ablation results. Under the adaptation setting, we used varying percentages of data volumes from 100% to 10% for training to determine the specific impact of data scarcity on model performance. It demonstrates that using 2D data for pretraining can help the model maintain high performance even with a small amount of 3D data. <b style="color: #b83b5e;">(c)</b> illustrates transferability ablation results. 2D to 3D knowledge transfer strategy not only improves the model’s understanding of 3D shapes and structures but also significantly enhances the model’s generalization ability and detection accuracy across different datasets.
+        </p>
       </div>
     </div>
   </div>
 </section>
-<!-- End overview image section -->
 
-
-  
-<!-- Image carousel -->
-<!-- <section class="hero is-small">
-  <h2 class="title is-3 has-text-centered">The comparison of detection result visualizations</h2>
-    <div style="max-width: 70%; margin: 0 auto;">
-  <h2 class="subtitle has-text-centered" style="font-size: 18px;"> <!-- 调整字体大小 -->
-  <!-- During the pretraining stage, the visual comparison tested on the SUNRGBD\ScanNet dataset includes four columns: the first column shows the ground truth images, the second column displays the ground truth point clouds, the third column presents the detection results by OV-3DET, and the fourth column reveals the detection outcomes by ImOV3D.
-  </h2>
-</div>
-
-    <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        Your image here -->
-        <!-- <img src="static/images/sun_vis_lower_dpi.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
-        <h2 class="subtitle has-text-centered">
-         The visualizations of SUNRGBD
-        </h2>
-      </div>
-      <div class="item">
-        Your image here -->
-        <!-- <img src="static/images/scan_vis_lower_dpi.png" alt="Overview image" style="width: 70%; margin: 0 auto; display: block;"/>
-        <h2 class="subtitle has-text-centered">
-          The visualizations of ScanNet
-        </h2>
-      </div>
-
-  </div>
-</div>
-</div>
-</section> -->
 
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">The comparison of detection result visualizations</h2>
+      <h2 class="title is-3 has-text-centered" style="font-size: 1.5rem;">The comparison of detection result visualizations</h2>
       <!-- <h2 class="subtitle has-text-centered" style="font-size: 18px;">
         During the pretraining stage, the visual comparison tested on the SUNRGBD/ScanNet dataset includes four columns: the first column shows the ground truth images, the second column displays the ground truth point clouds, the third column presents the detection results by OV-3DET, and the fourth column reveals the detection outcomes by ImOV3D.
       </h2> -->
       
       <div class="content has-text-centered" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
         <div style="flex: 1; margin: 0 10px; text-align: center;">
-          <img src="static/images/sun_vis_lower_dpi.png" alt="Overview image SUNRGBD" style="width: 100%; height: 350px; object-fit: cover;"/>
+          <img src="static/images/sun_vis_lower_dpi.png" alt="Overview image SUNRGBD" style="width: %; height: 300px; object-fit: cover;"/>
           <h2 class="subtitle has-text-centered" style="font-size: 18px; color: #b83b5e;">
             The visualizations of SUNRGBD
           </h2>
         </div>
         <div style="flex: 1; margin: 0 10px; text-align: center;">
-          <img src="static/images/scan_vis_lower_dpi.png" alt="Overview image ScanNet" style="width: 100%; height: 350px; object-fit: cover;"/>
+          <img src="static/images/scan_vis_lower_dpi.png" alt="Overview image ScanNet" style="width: %; height: 300px; object-fit: cover;"/>
           <h2 class="subtitle has-text-centered" style="font-size: 18px; color: #b83b5e;">
             The visualizations of ScanNet
           </h2>
